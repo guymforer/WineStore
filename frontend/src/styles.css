@@ -2,8 +2,15 @@
  * border radius
  */
 
+ 
+
 .btn,
 .jumbotron,
+
+body{
+  background-color: #f3f2ef;
+}
+
 .nav :hover {
   border-radius: 0px;
 }
@@ -15,44 +22,70 @@
   border-radius: 50%;
   padding: 2px;
   font-size: 12px;
-  font-style: italic;
-  background: #000;
+  font-style:normal;
+  background: rgb(243, 224, 198);
 }
 /**
  * single product page- product name
  */
 
 .name {
-  background: indigo;
-  color: #fff;
+  background: #fcfcfc;
+  color: #C0D8C0;
   font-weight: bold;
 }
+/* color new */
+.mb-4{
+  color:#728f72
+}
+.card{
+  background-color: #fdfcfa;
 
+}
+/* search color */
+.input-group-text{
+  color:#3f602d;
+}
+/* search select color */
+.btn{
+  color:#728f72;
+}
+/* in card */
+.btn-light {
+  color:#5f9150;
+}
 /**
  * black shade form 10-1
+ card stuff
  */
 .black-10 {
-  background: #f2f2f2;
+  color: #275a27;
+  font-size: larger;
+  margin-bottom: 0%;
 }
 
 .black-9 {
-  background: #e6e6e6;
+  color: #728f72;
+  margin-top: 0%;
+  margin-bottom: 0%;
 }
 
 .black-8 {
-  background: #d9d9d9;
+  color: #85a385;
+  background-color: #eef5ee;
+  position: relative;
 }
 
 .black-7 {
-  background: #cccccc;
+  background: #F5EEDC;
 }
 
 .black-6 {
-  background: #bfbfbf;
+  background: #F5EEDC;
 }
 
 .black-5 {
-  background: #b3b3b3;
+  background: #F5EEDC;
 }
 /**
  * product image on card
@@ -77,7 +110,20 @@
     margin-top: 10px;
   }
 }
+.map-text{
+  color: #3f602d;
+  font-size: 1.5em;
+  margin-left: 18em;
+}
 
+.map{
+  margin-left: 10em;
+  /* border-radius: 50em; */
+}
+/*  footer*/
+.me-5{
+  margin-left: 22em;
+}
 /**
  * jumbotron animation
  */
@@ -86,7 +132,7 @@
   width: 30wh;
   height: 30vh;
   color: #fff;
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background: linear-gradient(-45deg, #ECB390,#e3917a, #eb8080, #e44545);
   background-size: 400% 400%;
   -webkit-animation: Gradient 15s ease infinite;
   -moz-animation: Gradient 15s ease infinite;
@@ -128,3 +174,9 @@
     background-position: 0% 50%;
   }
 }
+
+
+/*  stock stuff */
+
+
+

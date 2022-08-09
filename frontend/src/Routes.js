@@ -16,6 +16,10 @@ import Orders from "./admin/Orders";
 import Profile from "./user/Profile";
 import ManageProducts from "./admin/ManageProducts";
 import UpdateProduct from "./admin/UpdateProduct";
+//import SimpleMap from "./core/SimpleMap";
+import addStore from "./admin/AddStore";
+import About from "./core/About";
+import Facebook from "./core/FacebookLog"
 
 const Routes = () => {
   return (
@@ -24,6 +28,8 @@ const Routes = () => {
         <Route path="/Signin" exact component={Signin} />
         <Route path="/Signup" exact component={Signup} />
         <Route path="/shop" exact component={Shop} />
+        <Route path="/about" exact component={About} />
+        <Route path="/facebook" exact component={Facebook} />
         <Route path="/" exact component={Home} />
         <PrivateRoute path="/user/dashboard" exact component={Dashboard} />
         <AdminRoute path="/admin/dashboard" exact component={AdminDashboard} />
@@ -35,6 +41,7 @@ const Routes = () => {
         <PrivateRoute path="/profile/:userId" exact component={Profile} />
         <AdminRoute path="/admin/products" exact component={ManageProducts} />
         <AdminRoute path="/admin/product/update/:productId" exact component={UpdateProduct} />
+        <AdminRoute path="/create/map" exact component={addStore} />
         
       </Switch>
     </BrowserRouter>

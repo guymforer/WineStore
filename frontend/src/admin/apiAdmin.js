@@ -142,7 +142,6 @@ export const deleteProduct = (productId, userId, token) => {
     });
 };
 
-
 export const getProduct = (productId) => {
   //console.log(name,email,password);
   return fetch(`${API}/product/${productId}`, {
@@ -156,8 +155,6 @@ export const getProduct = (productId) => {
     });
 };
 
-
-
 export const updateProduct = (productId, userId, token, product) => {
   //console.log(name,email,password);
   return fetch(`${API}/product/${productId}/${userId}`, {
@@ -166,7 +163,7 @@ export const updateProduct = (productId, userId, token, product) => {
       Accept: "application/json",
       Authorization: `Bearer ${token}`,
     },
-    body: product
+    body: product,
   })
     .then((response) => {
       return response.json();
@@ -175,3 +172,50 @@ export const updateProduct = (productId, userId, token, product) => {
       console.log(err);
     });
 };
+
+export const createStore = (userId, token, values) => {
+  const name = values.name;
+  const longitude = values.longitude;
+  const latitude = values.latitude;
+
+  console.log("createStore with map: ", values, name, longitude, latitude);
+  return fetch(`${API}/map/create/${userId}`, {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({ name, longitude, latitude }),
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+// export const getAdresses = () => {
+//   var data = [];
+//   //console.log(name,email,password);
+//   return fetch(`${API}/map/`, {
+//     method: "GET",
+//   }).then((response) => {
+//     response
+//       .json()
+//       .then((data) => ({
+//         data: data,
+//         status: response.status,
+//       }))
+//       .then((res) => {
+//         console.log("returning arr data - ", res.data);
+//         return res.data;
+//       })
+//       .catch((err) => {
+//         console.log(err);
+//       });
+//   });
+// };
+
+

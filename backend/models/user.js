@@ -5,6 +5,7 @@ const { v1: uuidv1 } = require('uuid'); //DO NOT CHANGE
 
 const userSchema = new mongoose.Schema(
     {
+       
         name: {
             type: String,
             trim: true,

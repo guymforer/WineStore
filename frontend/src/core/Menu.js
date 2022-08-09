@@ -6,15 +6,15 @@ import { itemTotal } from "./cartHelpers";
 
 const isActive = (history, path) => {
   if (history.location.pathname === path) {
-    return { color: "#ff9900" };
+    return { color:"#65C18C" };
   } else {
-    return { color: "#ffffff" };
+    return { color: "#6D8B74" };
   }
 };
 
 const Menu = ({ history }) => (
   <div>
-    <ul className="nav nav-tabs bg-primary">
+    <ul className="nav nav-tabs">
       <li className="nav-item">
         <Link className="nav-link" style={isActive(history, "/")} to="/">
           Home
@@ -26,6 +26,18 @@ const Menu = ({ history }) => (
           Shop
         </Link>
       </li>
+
+      <li className="nav-item">
+        <Link className="nav-link" style={isActive(history, "/about")} to="/about">
+          About Us
+        </Link>
+      </li>
+
+      {/* <li className="nav-item">
+        <Link className="nav-link" style={isActive(history, "/facebook")} to="/facebook">
+          facebook
+        </Link>
+      </li> */}
       
       <li className="nav-item">
         <Link className="nav-link" style={isActive(history, "/cart")} to="/cart">

@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Layout from "./Layout";
-import { getProducts, getFilteredProducts } from "./apiCore";
+import { getProducts, getFilteredProducts, getAdresses } from "./apiCore";
 import Card from "./Card";
 import Search from "./Search";
 import SimpleMap from "./SimpleMap";
+//import Footer from "./Footer";
+import About from "./About";
 // import { getStores, loadMap } from "./map";
 
 const Home = () => {
@@ -45,11 +47,11 @@ const Home = () => {
 
   return (
     <Layout
-      title="Home Page"
-      description="Node React E-commerce App"
+      title="A la vino"
+      description="Welcome to our web wine shop. the best of the best is just one click away.."
       className="container-fluid"
     >
-      <Search />
+      {/* <Search /> */}
       <h2 className="mb-4">New Arrivals</h2>
       <div className="row">
         {productsByArrival.map((product, i) => (
@@ -68,7 +70,11 @@ const Home = () => {
         ))}
       </div>
 
-      <SimpleMap />
+      <h2 className="map-text">Come visit our store!</h2>
+      <div className="map">
+        <SimpleMap />
+      </div>
+      {/* <Footer/> */}
     </Layout>
   );
 };

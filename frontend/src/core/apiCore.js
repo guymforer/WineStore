@@ -138,3 +138,23 @@ export const createOrder = (userId, token, createOrderData) => {
     })
     .catch((err) => console.log(err));
 };
+
+export const getAdresses = () => {
+  //console.log(name,email,password);
+  return fetch(`${API}/map/`, {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => {
+      response.json().then((data) => {
+        console.log(data);
+        return data;
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};

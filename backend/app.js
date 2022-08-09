@@ -1,4 +1,3 @@
-
 const express = require("express");
 const mongoose = require("mongoose");
 const morgan = require("morgan");
@@ -14,7 +13,7 @@ const categoryRoutes = require("./routes/category");
 const productRoutes = require("./routes/product");
 const braintreeRoutes = require("./routes/braintree");
 const orderRoutes = require("./routes/order");
-
+const mapRoutes = require("./routes/map");
 
 
 // app
@@ -48,6 +47,7 @@ app.use("/api", categoryRoutes);
 app.use("/api", productRoutes);
 app.use("/api", braintreeRoutes);
 app.use("/api", orderRoutes);
+app.use("/api", mapRoutes);
 
 
 const port = process.env.PORT || 8000;
