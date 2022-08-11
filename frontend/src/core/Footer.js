@@ -46,11 +46,12 @@ const Footer = () => {
             <MDBCol md="6" lg="6" xl="6" className="mx-0 mb-5" id="col">
               {/* Breaking News Area */}
               <div className="">
-                <h6 className="text-uppercase fw-bold mb-4">
-                  Troubled with USD ?
-                  <br />
-                  Options To Convert Your Money
-                </h6>
+                <div className="text-uppercase fw-bold mb-4">
+                  <p> Troubled with USD ? </p>
+                  <h6 className="text-lowercase fw-none mb-4">
+                    Options To Convert Your Money
+                  </h6>
+                </div>
               </div>
               {/* Stock News Area */}
               <div className="col-md-6 mx-auto" id="news">
