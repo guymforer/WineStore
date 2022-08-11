@@ -31,9 +31,9 @@ const Footer = () => {
       </section>
 
       <section className="">
-        <MDBContainer className="text-center text-md-start mt-10 mg-0">
+        <MDBContainer className="text-center text-md-start mt-10">
           <MDBRow className="mt-3">
-            <MDBCol md="3" lg="4" xl="3" className="mx-auto mb-4">
+            <MDBCol md="4" lg="4" xl="3" className="mx-0 mb-4" id="col">
               <h6 className="text-uppercase fw-bold mb-4">
                 <MDBIcon icon="gem" className="me-3" />A La Vino
               </h6>
@@ -43,14 +43,16 @@ const Footer = () => {
               </p>
             </MDBCol>
 
-            <MDBCol md="6" lg="6" xl="6" className="mx-auto mb-5">
+            <MDBCol md="6" lg="6" xl="6" className="mx-0 mb-5" id="col">
               {/* Breaking News Area */}
-              <div className="col-6 col-md-6">
-              <h6 className="text-uppercase fw-bold mb-4">finn</h6>
-              
+              <div className="">
+                <div className="text-uppercase fw-bold mb-4">
+                 <p> Troubled with USD ? </p>
+                  <h6 className="text-lowercase fw-none mb-4">Options To Convert Your Money</h6>
+                  </div>
               </div>
               {/* Stock News Area */}
-              <div className="col-6 col-md-6 mg-0">
+              <div className="col-md-6 mx-auto" id="news">
                 <div className="stock-news-area">
                   <div id="stockNewsTicker" className="ticker">
                     <div className="column">
@@ -81,7 +83,7 @@ const Footer = () => {
               </div>
             </MDBCol>
 
-            <MDBCol md="4" lg="3" xl="3" className="mx-auto ">
+            <MDBCol md="4" lg="4" xl="3" className="mx-0 mb-4" id="col">
               <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
               <p>
                 <MDBIcon icon="home" className="me-2" />

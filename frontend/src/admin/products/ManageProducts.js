@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import Layout from "../core/Layout";
-import { isAuthenticated } from "../auth";
+import Layout from "../../core/Layout";
+import { isAuthenticated } from "../../auth";
 import { Link } from "react-router-dom";
-import { getProducts, deleteProduct } from "./apiAdmin";
+import { getProducts, deleteProduct } from "../apiAdmin";
 
 const ManageProducts = () => {
   const [products, setProducts] = useState([]);
@@ -35,13 +35,25 @@ const ManageProducts = () => {
   return (
     <Layout
       title="Manage Products"
-      description="Perform CRUD on products"
+      description="Managing products, creating new ones and making changes on existing products"
       className="container-fluid"
     >
-      <div className="row">
+      <div className="managing-admin">
+        <li className="list-group-item">
+          <Link className="nav-link" to="/products/create/product">
+            Create Product
+          </Link>
+        </li>
+        <li className="list-group-item">
+          <Link className="nav-link" to="/admin/products/Updatedelete">
+            Update / Delete Products
+          </Link>
+        </li>
+      </div>
+      {/* <div className="row">
         <div className="col-12">
-        <h2 className="text-center"> Total {products.length} Products</h2>
-        <hr/>
+          <h2 className="text-center"> Total {products.length} Products</h2>
+          <hr />
           <ul className="list-group">
             {products.map((p, i) => (
               <li
@@ -61,9 +73,9 @@ const ManageProducts = () => {
               </li>
             ))}
           </ul>
-          <br/>
-        </div>
-      </div>
+          <br />
+        </div> */}
+      {/* </div> */}
     </Layout>
   );
 };

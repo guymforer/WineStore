@@ -1,25 +1,43 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Signup from "./user/Signup";
-import Signin from "./user/Signin";
+
+// core
 import Home from "./core/Home";
-import PrivateRoute from "./auth/PrivateRoute";
-import Dashboard from "./user/UserDashboard";
-import AdminRoute from "./auth/AdminRoute";
-import AdminDashboard from "./user/AdminDashboard";
-import AddCategory from "./admin/AddCategory";
-import AddProduct from "./admin/AddProduct";
 import Shop from "./core/Shop";
 import Product from "./core/Product";
 import Cart from "./core/Cart";
-import Orders from "./admin/Orders";
-import Profile from "./user/Profile";
-import ManageProducts from "./admin/ManageProducts";
-import UpdateProduct from "./admin/UpdateProduct";
-//import SimpleMap from "./core/SimpleMap";
-import addStore from "./admin/AddStore";
 import About from "./core/About";
-import Facebook from "./core/FacebookLog"
+import Facebook from "./core/FacebookLog";
+
+//user
+import Signup from "./user/Signup";
+import Signin from "./user/Signin";
+import PrivateRoute from "./auth/PrivateRoute";
+import Dashboard from "./user/UserDashboard";
+import Profile from "./user/Profile";
+
+///admin 
+import AdminRoute from "./auth/AdminRoute";
+import AdminDashboard from "./user/AdminDashboard";
+
+///admin products
+import AddProduct from "./admin/products/AddProduct";
+import ManageProducts from "./admin/products/ManageProducts";
+import UpdateProduct from "./admin/products/UpdateProduct";
+import Updatedelete from "./admin/products/Updatedelete";
+
+//admin categories
+import ManageCategories from "./admin/categories/ManageCategories"
+import AddCategory from "./admin/categories/AddCategory";
+import updelCategories from "./admin/categories/Updatedelete";
+import UpdateCategory from "./admin/categories/UpdateCategory";
+//admin orders
+import Orders from "./admin/Orders";
+
+//admin stores
+import addStore from "./admin/AddStore";
+
+
 
 const Routes = () => {
   return (
@@ -33,8 +51,8 @@ const Routes = () => {
         <Route path="/" exact component={Home} />
         <PrivateRoute path="/user/dashboard" exact component={Dashboard} />
         <AdminRoute path="/admin/dashboard" exact component={AdminDashboard} />
-        <AdminRoute path="/create/category" exact component={AddCategory} />
-        <AdminRoute path="/create/product" exact component={AddProduct} />
+        <AdminRoute path="/admin/categories/create/category" exact component={AddCategory} />
+        <AdminRoute path="/products/create/product" exact component={AddProduct} />
         <Route path="/product/:productId" exact component={Product} />
         <Route path="/cart" exact component={Cart} />
         <AdminRoute path="/admin/orders" exact component={Orders} />
@@ -42,7 +60,10 @@ const Routes = () => {
         <AdminRoute path="/admin/products" exact component={ManageProducts} />
         <AdminRoute path="/admin/product/update/:productId" exact component={UpdateProduct} />
         <AdminRoute path="/create/map" exact component={addStore} />
-        
+        <AdminRoute path="/admin/products/Updatedelete" exact component={Updatedelete} />
+        <AdminRoute path="/admin/categories" exact component={ManageCategories} />
+        <AdminRoute path="/admin/categories/Updatedelete" exact component={updelCategories} />
+        <AdminRoute path="/admin/categories/Update/:userId" exact component={UpdateCategory} />
       </Switch>
     </BrowserRouter>
   );

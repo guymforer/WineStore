@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import Layout from "../core/Layout";
-import { isAuthenticated } from "../auth";
+import Layout from "../../core/Layout";
+import { isAuthenticated } from "../../auth";
 import { Link, Redirect } from "react-router-dom";
-import { getProduct, getCategories, updateProduct } from "./apiAdmin";
+import { getProduct, getCategories, updateProduct } from "../apiAdmin";
 
 const UpdateProduct = ({ match }) => {
     const [values, setValues] = useState({
@@ -230,8 +230,8 @@ const UpdateProduct = ({ match }) => {
 
     return (
         <Layout
-            title="Add a new product"
-            description={`G'day ${user.name}, ready to add a new product?`}
+            title="Update product"
+            description={`G'day ${user.name}, ready to update product?`}
         >
             <div className="row">
                 <div className="col-md-8 offset-md-2">

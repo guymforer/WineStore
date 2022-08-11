@@ -1,5 +1,7 @@
 import { API } from "../config";
 
+//categories 
+
 export const createCategory = (userId, token, category) => {
   //console.log(name,email,password);
   return fetch(`${API}/category/create/${userId}`, {
@@ -10,24 +12,6 @@ export const createCategory = (userId, token, category) => {
       Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify(category),
-  })
-    .then((response) => {
-      return response.json();
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-};
-
-export const createProduct = (userId, token, product) => {
-  //console.log(name,email,password);
-  return fetch(`${API}/product/create/${userId}`, {
-    method: "POST",
-    headers: {
-      Accept: "application/json",
-      Authorization: `Bearer ${token}`,
-    },
-    body: product,
   })
     .then((response) => {
       return response.json();
@@ -49,6 +33,64 @@ export const getCategories = () => {
       console.log(err);
     });
 };
+
+export const deleteCategory = (categoryId, userId, token) => {
+  //console.log(name,email,password);
+  return fetch(`${API}/category/${categoryId}/${userId}`, {
+    method: "DELETE",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+export const updateCategory = (userId, token, categoryId, name) => {
+  console.log("id userId: ", userId);
+  console.log("id token: ", token);
+  console.log("name name token: ", name);
+  console.log("id categoryId: ", categoryId);
+  console.log("name json:", JSON.stringify({ name }));
+  return fetch(`${API}/category/${categoryId}/${userId}`, {
+    method: "PUT",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({ name:name })
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+
+export const getCategory = (categoryId) => {
+  //console.log(name,email,password);
+  return fetch(`${API}/category/${categoryId}`, {
+    method: "GET",
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+
+//orders
 
 export const listOrders = (userId, token) => {
   //console.log(name,email,password);
@@ -110,6 +152,24 @@ export const updateOrderStatus = (userId, token, orderId, status) => {
  * update single product
  * delete single product
  */
+
+ export const createProduct = (userId, token, product) => {
+  //console.log(name,email,password);
+  return fetch(`${API}/product/create/${userId}`, {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: product,
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
 
 export const getProducts = () => {
   //console.log(name,email,password);
@@ -173,6 +233,8 @@ export const updateProduct = (productId, userId, token, product) => {
     });
 };
 
+// stores 
+
 export const createStore = (userId, token, values) => {
   const name = values.name;
   const longitude = values.longitude;
@@ -195,27 +257,3 @@ export const createStore = (userId, token, values) => {
       console.log(err);
     });
 };
-
-// export const getAdresses = () => {
-//   var data = [];
-//   //console.log(name,email,password);
-//   return fetch(`${API}/map/`, {
-//     method: "GET",
-//   }).then((response) => {
-//     response
-//       .json()
-//       .then((data) => ({
-//         data: data,
-//         status: response.status,
-//       }))
-//       .then((res) => {
-//         console.log("returning arr data - ", res.data);
-//         return res.data;
-//       })
-//       .catch((err) => {
-//         console.log(err);
-//       });
-//   });
-// };
-
-

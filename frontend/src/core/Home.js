@@ -52,7 +52,6 @@ const Home = () => {
       description="Welcome to our web wine shop. the best of the best is just one click away.."
       className="container-fluid"
     >
-      
       {/* <Search /> */}
       <h2 className="mb-4">New Arrivals</h2>
       <div className="row">
@@ -72,13 +71,13 @@ const Home = () => {
         ))}
       </div>
 
-      {/* <h2 className="map-text">Come visit our store!</h2>
-      <div className="map"> */}
-        {/* <SimpleMap /> */}
-      {/* </div> */}
+      <div className="map-home">
+        <h2 className="map-text">Come visit our store!</h2>
+        <div className="map">
+          <SimpleMap />
+        </div>
+      </div>
       {/* <Footer/> */}
-
-     
     </Layout>
   );
 };
