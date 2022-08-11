@@ -6,6 +6,7 @@ import Search from "./Search";
 import SimpleMap from "./SimpleMap";
 //import Footer from "./Footer";
 import About from "./About";
+import Carousel from "./Carousle";
 // import { getStores, loadMap } from "./map";
 
 const Home = () => {
@@ -51,6 +52,7 @@ const Home = () => {
       description="Welcome to our web wine shop. the best of the best is just one click away.."
       className="container-fluid"
     >
+      
       {/* <Search /> */}
       <h2 className="mb-4">New Arrivals</h2>
       <div className="row">
@@ -70,11 +72,13 @@ const Home = () => {
         ))}
       </div>
 
-      <h2 className="map-text">Come visit our store!</h2>
-      <div className="map">
-        <SimpleMap />
-      </div>
+      {/* <h2 className="map-text">Come visit our store!</h2>
+      <div className="map"> */}
+        {/* <SimpleMap /> */}
+      {/* </div> */}
       {/* <Footer/> */}
+
+     
     </Layout>
   );
 };
