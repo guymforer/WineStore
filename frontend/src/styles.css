@@ -178,6 +178,7 @@ body{
 /*  stock stuff */
 /* Float four columns side by side */
 .column {
+<<<<<<< HEAD
   /* float:left; */
  align-items: center; 
  width: 8em;
@@ -200,10 +201,35 @@ body{
  content: "";
  display: table;
  clear: both;
+=======
+   /* float:left; */
+  align-items: center; 
+  width: 8em;
+  position:relative;
+  margin: auto;
+  display:table-cell;
+  padding: 5px;
+ 
+}
+#col{
+  position:relative;
+
+}
+
+/* Remove extra left and right margins, due to padding in columns*/
+.row {margin: 0 -5px;} 
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+>>>>>>> 11fecaf001fd2e56d4f1c3526e335cddbd0179f2
 }
 
 /* Style the counter cards */
 .card {
+<<<<<<< HEAD
  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
  padding: 4px;
  text-align: center;
@@ -237,4 +263,23 @@ body{
 .list-group-item{
   margin: 1em;
   float:right;
+=======
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 4px;
+  text-align: center;
+  background-color: #f1f1f1;
+  
+}
+#news{
+  box-sizing:content-box;
+  width: 300px;
+}
+/* Responsive columns - one column layout (vertical) on small screens*/
+@media screen and (max-width: 300) {
+  .column {
+    width: 50%;
+    display: block;
+    margin-bottom: 20px;
+  }
+>>>>>>> 11fecaf001fd2e56d4f1c3526e335cddbd0179f2
 }

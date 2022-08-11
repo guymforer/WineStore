@@ -47,9 +47,11 @@ const Footer = () => {
               {/* Breaking News Area */}
               <div className="">
                 <div className="text-uppercase fw-bold mb-4">
-                 <p> Troubled with USD ? </p>
-                  <h6 className="text-lowercase fw-none mb-4">Options To Convert Your Money</h6>
-                  </div>
+                  <p> Troubled with USD ? </p>
+                  <h6 className="text-lowercase fw-none mb-4">
+                    Options To Convert Your Money
+                  </h6>
+                </div>
               </div>
               {/* Stock News Area */}
               <div className="col-md-6 mx-auto" id="news">
