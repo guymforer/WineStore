@@ -52,7 +52,7 @@ export default function SimpleMap() {
       });
     });
 
-    console.log("markers: ", markers);
+    // console.log("markers: ", markers);
     return markers;
   };
   if (markers1.length > 0) {
@@ -66,7 +66,7 @@ export default function SimpleMap() {
           defaultZoom={defaultProps.zoom}
           onGoogleApiLoaded={({ map, maps }) => {
             //loadMarkers();
-            console.log("onGoogleApiLoaded");
+            // console.log("onGoogleApiLoaded");
             renderMarkers(map, maps);
           }}
         ></GoogleMapReact>

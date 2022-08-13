@@ -19,6 +19,7 @@ import Profile from "./user/Profile";
 ///admin 
 import AdminRoute from "./auth/AdminRoute";
 import AdminDashboard from "./user/AdminDashboard";
+import StatisticsFuncs from "./admin/stattistics/StatisticsFuncs";
 
 ///admin products
 import AddProduct from "./admin/products/AddProduct";
@@ -64,6 +65,7 @@ const Routes = () => {
         <AdminRoute path="/admin/categories" exact component={ManageCategories} />
         <AdminRoute path="/admin/categories/Updatedelete" exact component={updelCategories} />
         <AdminRoute path="/admin/categories/Update/:userId" exact component={UpdateCategory} />
+        <AdminRoute path="/admin/statistics" exact component={StatisticsFuncs}/>
       </Switch>
     </BrowserRouter>
   );

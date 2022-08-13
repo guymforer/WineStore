@@ -2,6 +2,7 @@ import React from "react";
 import Layout from "../core/Layout";
 import { isAuthenticated } from "../auth";
 import { Link } from "react-router-dom";
+// import Statsticsfuncs from "../admin/stattistics/StatisticsFuncs";
 
 const AdminDashboard = () => {
   const {
@@ -38,6 +39,11 @@ const AdminDashboard = () => {
               Create store address
             </Link>
           </li>
+          <li className="list-group-item">
+            <Link className="nav-link" to="/admin/statistics">
+              get products by sort
+            </Link>
+          </li>
         </ul>
       </div>
     );
@@ -67,6 +73,7 @@ const AdminDashboard = () => {
       <div className="row">
         <div className="col-3">{adminLinks()}</div>
         <div className="col-9">{adminInfo()}</div>
+        {/* <Statsticsfuncs /> */}
       </div>
     </Layout>
   );
