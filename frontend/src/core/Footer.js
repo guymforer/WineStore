@@ -7,6 +7,7 @@ import {
   MDBIcon,
 } from "mdb-react-ui-kit";
 import SingleStockReport from "./SingleStockReport";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -98,6 +99,20 @@ const Footer = () => {
               <p>
                 <MDBIcon icon="phone" className="me-3" /> + 972 050 333 9698
               </p>
+              <p>
+               <ul>
+                  <li className="nav-link ">
+                    <Link className="nav-item  me-3" to="/join">
+                    <MDBIcon icon="far fa-comment-dots" className="me-3" />  Customer Service
+                      {/* <sup>
+                        <small className="cart-badge">Chat</small>
+                      </sup> */}
+                    </Link>
+                  </li>
+                </ul>
+              </p>
+
+              
             </MDBCol>
           </MDBRow>
         </MDBContainer>

@@ -5,8 +5,6 @@ import Card from "./Card";
 import Search from "./Search";
 import SimpleMap from "./SimpleMap";
 //import Footer from "./Footer";
-import About from "./About";
-import Carousel from "./Carousle";
 // import { getStores, loadMap } from "./map";
 
 const Home = () => {
