@@ -8,7 +8,7 @@ import RadioBox from "./RadioBox";
 import SimpleMap from "./SimpleMap";
 import AboutDisplay from "./AboutDisplay";
 import BarChart from "../admin/stattistics/Charts";
-
+import { Link } from "react-router-dom";
 
 const About = () => {
   ////statistics
@@ -23,25 +23,18 @@ const About = () => {
       description="Wine lifestyle always wins. "
       className="container-fluid"
     >
-   <AboutDisplay />
-      
+      <AboutDisplay />
+ 
       {/* facebook */}
 
-      <iframe
-        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100084310570754&tabs=timeline&width=500&height=300&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId=1128816011320310"
-        width={500}
-        height={250}
-        style={{ border: "none", overflow: "hidden" }}
-        scrolling="no"
-        frameBorder={0}
-        allowtransparency="true"
-        allow="encrypted-media"
-      ></iframe>
+ 
 
       {/* map */}
       <h2 className="map-text">Come visit our store!</h2>
       <div className="map">
         <SimpleMap />
+
+   
       </div>
       {/* <BarChart /> */}
     </Layout>

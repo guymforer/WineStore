@@ -257,3 +257,43 @@ export const createStore = (userId, token, values) => {
       console.log(err);
     });
 };
+
+///stattistics
+
+
+
+export const getOrderEnumStat = () => {
+  //const arr = [];
+//console.log(name,email,password);
+return fetch(`${API}/groupby`, {
+  method: "GET",
+  headers: {
+    Accept: "application/json",
+  }
+})
+.then((response) => {
+  console.log("in get req:", response);
+return response.json();
+})
+  .catch((err) => {
+    console.log(err);
+  });
+};
+
+export const getGroupByAdd = () => {
+  //const arr = [];
+//console.log(name,email,password);
+return fetch(`${API}/groupbyaddress`, {
+  method: "GET",
+  headers: {
+    Accept: "application/json",
+  }
+})
+.then((response) => {
+  console.log("in get req:", response);
+return response.json();
+})
+  .catch((err) => {
+    console.log(err);
+  });
+};
