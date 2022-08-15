@@ -7,7 +7,6 @@ import { prices } from "./fixedPrices";
 import RadioBox from "./RadioBox";
 import SimpleMap from "./SimpleMap";
 import AboutDisplay from "./AboutDisplay";
-import BarChart from "../admin/stattistics/Charts";
 import { Link } from "react-router-dom";
 
 const About = () => {
