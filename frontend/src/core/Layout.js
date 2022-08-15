@@ -5,6 +5,7 @@ import Footer from "./Footer";
 import SingleStockReport from "./SingleStockReport";
 
 const Layout = ({
+  // img = "img",
   title = "Title",
   description = "Description",
   className,
@@ -13,14 +14,15 @@ const Layout = ({
   <div>
     <div>
       <Menu />
-      <div className="jumbotron">
-        <h2>{title}</h2>
-        <p className="lead">{description}</p>
+      <div className="jambo">
+        <div className="jumbotron">
+          {/* <img className="image" src={img}></img> */}
+          <h2>{title}</h2>
+          <p className="lead">{description}</p>
+        </div>
       </div>
       <div className={className}>{children}</div>
     </div>
-
-    
 
     <div>
       <Footer />

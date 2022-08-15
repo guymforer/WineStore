@@ -39,7 +39,7 @@ const Product = (props) => {
       }
       className="container-fluid"
     >
-      <h2 className="mb-4">Single Product</h2>
+      <h2 className="mb-4"> </h2><br/><br/>
       <div className="row">
         <div className="col-8">
           {product && product.description && (

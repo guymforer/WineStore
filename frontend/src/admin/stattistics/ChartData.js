@@ -35,7 +35,7 @@ const ChartData = () => {
       },
       title: {
         display: true,
-        test: "products by category",
+        test: "products by status",
       },
     },
   };
@@ -44,7 +44,7 @@ const ChartData = () => {
     labels: vals?.map((obj) => obj.status),
     datasets: [
       {
-        label: "total",
+        label: "status",
         data: vals?.map((obj) => obj.amount),
         backgroundColor: [
           "rgba(255, 99, 132, 0.2)",
