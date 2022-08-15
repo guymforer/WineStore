@@ -102,7 +102,7 @@ const Footer = () => {
               <p>
                <ul>
                   <li className="nav-link ">
-                    <Link className="nav-item  me-3" to="/join">
+                    <Link className="nav-item  me-3" to="/chatapp">
                     <MDBIcon icon="far fa-comment-dots" className="me-3" />  Customer Service
                       {/* <sup>
                         <small className="cart-badge">Chat</small>
