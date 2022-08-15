@@ -2,11 +2,11 @@ const express = require("express");
 const router = express.Router();
 
 
-const {getProducytCount} = require ("../controllers/analytics")
+const {getProductStats, getProfitByAdd} = require ("../controllers/analytics")
 
 
-router.get("/groupBy", getProducytCount);
-
+router.get("/groupby", getProductStats);
+router.get("/groupbyaddress", getProfitByAdd);
 
 
 module.exports = router;

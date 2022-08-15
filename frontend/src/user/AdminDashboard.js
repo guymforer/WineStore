@@ -41,7 +41,7 @@ const AdminDashboard = () => {
           </li>
           <li className="list-group-item">
             <Link className="nav-link" to="/admin/statistics">
-              get products by sort
+              data
             </Link>
           </li>
         </ul>
