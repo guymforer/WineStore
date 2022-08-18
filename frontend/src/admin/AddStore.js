@@ -61,7 +61,18 @@ const AddStore = () => {
         />
       </div>
       <div className="form-group">
-        <label className="text-muted">longitude</label>
+        <label className="text-muted">latitude</label>
+        <input
+          onChange={handleChange}
+          type="number"
+          step="0.000001"
+          className="form-control"
+          id="latitude"
+          name="latitude"
+        />
+      </div>
+      <div className="form-group">
+        <label className="texxt-muted">longitude</label>
         <input
           onChange={handleChange}
           type="number"
@@ -69,17 +80,6 @@ const AddStore = () => {
           className="form-control"
           id="longitude"
           name="longitude"
-        />
-      </div>
-      <div className="form-group">
-        <label className="texxt-muted">latitude</label>
-        <input
-          onChange={handleChange}
-          type="number"
-          step="0.00001"
-          className="form-control"
-          id="latitude"
-          name="latitude"
         />
       </div>
       <button className="btn btn-outline-primary">Create store</button>

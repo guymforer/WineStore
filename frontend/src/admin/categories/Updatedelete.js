@@ -39,7 +39,7 @@ const Updatedelete = () => {
       className="container-fluid"
     >
       <div className="row">
-        <div className="col-12">
+        <div className="col-8">
           <h2 className="text-center"> Total {categories.length} Categories</h2>
           <hr />
           <ul className="list-group">

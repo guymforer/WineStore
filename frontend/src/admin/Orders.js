@@ -67,7 +67,7 @@ const Orders = () => {
 
   const showStatus = (o) => (
     <div className="form-group">
-      <h3 className="mark mb-4">Status: {o.status}</h3>
+      <h3 className="mark mb-3">Status: {o.status}</h3>
       <select
         className="form-control"
         onChange={(e) => handleStatusChange(e, o._id)}
@@ -88,7 +88,7 @@ const Orders = () => {
       description={`G'day ${user.name}, you can manage all the orders here`}
     >
       <div className="row">
-        <div className="col-md-8 offset-md-2">
+        <div className="col-7 offset-md-2">
           {showOrdersLength()}
 
           {orders.map((o, oIndex) => {

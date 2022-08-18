@@ -39,7 +39,7 @@ export default function SimpleMap() {
       lat: 31.96102,
       lng: 34.80162,
     },
-    zoom: 15,
+    zoom: 12,
   };
 
   const renderMarkers = (map, maps) => {

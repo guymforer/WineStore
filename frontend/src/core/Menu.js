@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { signout, isAuthenticated } from "../auth";
 import { itemTotal } from "./cartHelpers";
+import SideBarCart from "./SidebarCart";
 
 
 const isActive = (history, path) => {
@@ -14,6 +15,7 @@ const isActive = (history, path) => {
 
 const Menu = ({ history }) => (
   <div>
+    {/* nav bar */}
     <ul className="nav nav-tabs">
       <li className="nav-item">
         <Link className="nav-link" style={isActive(history, "/")} to="/">
@@ -94,10 +96,10 @@ const Menu = ({ history }) => (
       )}
 
       {isAuthenticated() && (
-        <li className="nav-item">
+        <li className="nav-item" >
           <span
             className="nav-link"
-            style={{ cursor: "pointer", color: "#ffffff" }}
+            style={{ cursor: "pointer", color: "#b9c5b7" }}
             onClick={() =>
               signout(() => {
                 history.push("/");
@@ -109,6 +111,12 @@ const Menu = ({ history }) => (
         </li>
       )}
     </ul>
+    <div>
+      {/* side bar */}
+
+      <SideBarCart />
+
+    </div>
   </div>
 );
 
