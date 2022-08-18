@@ -3,6 +3,8 @@ import { Link, Redirect } from "react-router-dom";
 import ShowImage from "./ShowImage";
 import moment from "moment";
 import { addItem, updateItem, removeItem } from "./cartHelpers";
+import SideBarCart from "./SidebarCart";
+import { getProduct } from "../admin/apiAdmin";
 
 const Card = ({
   product,
@@ -13,18 +15,33 @@ const Card = ({
 }) => {
   const [redirect, setRedirect] = useState(false);
   const [count, setCount] = useState(product.count);
+  const [pro, setPro] = useState("");
+  const [error, setError] = useState("");
+  
 
   const showViewButton = (showViewProductButton) => {
     return (
       showViewProductButton && (
         <Link to={`/product/${product._id}`} className="mr-2">
-          <button className="btn btn btn-light mr-2 mb-2">
-            View Product
-          </button>
+          <button className="btn btn btn-light mr-2 mb-2">View Product</button>
         </Link>
       )
     );
   };
+
+  const init = productId => {
+    getProduct(productId).then(data => {
+        if (data.error) {
+            setError(data.error)
+        } else {
+            // populate the state
+            setPro({
+                quantity: data.quantity,
+            });
+            // load categories
+        }
+    });
+};
 
   const addToCart = () => {
     addItem(product, () => {
@@ -34,6 +51,7 @@ const Card = ({
 
   const shouldRedirect = (redirect) => {
     if (redirect) {
+      
       return <Redirect to="/cart" />;
     }
   };
@@ -41,10 +59,7 @@ const Card = ({
   const showAddToCart = (showAddToCartButton) => {
     return (
       showAddToCartButton && (
-        <button
-          onClick={addToCart}
-          className="btn btn btn-light mt-2 mb-2"
-        >
+        <button onClick={addToCart} className="btn btn btn-light mt-2 mb-2">
           Add to cart
         </button>
       )
@@ -55,7 +70,10 @@ const Card = ({
     return (
       showRemoveProductButton && (
         <button
-          onClick={() => removeItem(product._id)}
+          onClick={() => {
+            removeItem(product._id);
+            setRedirect(true);
+          }}
           className="btn btn-outline-danger mt-2 mb-2"
         >
           Remove Product
@@ -73,9 +91,22 @@ const Card = ({
   };
 
   const handleChange = (productId) => (event) => {
+    init(productId)
+
     setCount(event.target.value < 1 ? 1 : event.target.value);
-    if (event.target.value >= 1) {
+    if (event.target.value >= 1 && event.target.value <= pro.quantity ) {
       updateItem(productId, event.target.value);
+      setError(false)
+    }
+    if (event.target.value > pro.quantity) {
+      setError(true)
+    }
+    
+  };
+
+  const showError = () => {
+    if (error) {
+      return <h3 className="text-danger">over the limit</h3>;
     }
   };
 
@@ -104,7 +135,7 @@ const Card = ({
       <div className="card-header name">{product.name}</div>
       <div className="card-body">
         {shouldRedirect(redirect)}
-        <ShowImage item={product} url="product"/>
+        <ShowImage item={product} url="product" />
         <p className="lead mt-2">{product.description.substring(0, 100)}</p>
         <p className="black-10">${product.price}</p>
         <p className="black-9">
@@ -120,7 +151,7 @@ const Card = ({
         {showViewButton(showViewProductButton)}
 
         {showAddToCart(showAddToCartButton)}
-
+        {showError(error)}
         {showRemoveButton(showRemoveProductButton)}
 
         {showCartUpdateOptions(cartUpdate)}

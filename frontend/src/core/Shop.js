@@ -99,49 +99,51 @@ const Shop = () => {
 
   return (
     <Layout
-    // img="https://media.istockphoto.com/videos/white-wine-being-poured-into-a-glass-video-id1297833617?s=640x640"
+      // img="https://media.istockphoto.com/videos/white-wine-being-poured-into-a-glass-video-id1297833617?s=640x640"
       title="Shop"
       description="Seach and find bottles of you choice"
       className="container-fluid"
     >
-      <div className="container-img">
-        <img
-          className="image"
-          src="https://media-exp1.licdn.com/dms/image/C561BAQFpz-IjA5s3zA/company-background_10000/0/1599478056731?e=2147483647&v=beta&t=bOBUz9xt5kjJCpVFEzUXsRcxsEvxe7XEK3Rq847TULg"
-          alt="Image Text"
-        />
+      <div className="body-lay">
+        <div className="container-img">
+          <img
+            className="image"
+            src="https://media-exp1.licdn.com/dms/image/C561BAQFpz-IjA5s3zA/company-background_10000/0/1599478056731?e=2147483647&v=beta&t=bOBUz9xt5kjJCpVFEzUXsRcxsEvxe7XEK3Rq847TULg"
+            alt="Image Text"
+          />
         </div>
-      <Search />
-      <div className="row">
-        <div className="col-4">
-          <h4>Filter by categories</h4>
-          <ul>
-            <Checkbox
-              categories={categories}
-              handleFilters={(filters) => handleFilters(filters, "category")}
-            />
-          </ul>
+        <Search />
+        <div className="row">
+          <div className="col-4">
+            <h4>Filter by categories</h4>
+            <ul>
+              <Checkbox
+                categories={categories}
+                handleFilters={(filters) => handleFilters(filters, "category")}
+              />
+            </ul>
 
-          <h4>Filter by price range</h4>
-          <div>
-            <RadioBox
-              prices={prices}
-              handleFilters={(filters) => handleFilters(filters, "price")}
-            />
+            <h4>Filter by price range</h4>
+            <div>
+              <RadioBox
+                prices={prices}
+                handleFilters={(filters) => handleFilters(filters, "price")}
+              />
+            </div>
           </div>
-        </div>
 
-        <div className="col-8">
-          <h2 className="mb-4-home">Products</h2>
-          <div className="row">
-            {filteredResults.map((product, i) => (
-              <div key={i} className="col-4 mb-3">
-                <Card product={product} />
-              </div>
-            ))}
+          <div className="col-7">
+            <h2 className="mb-4-home">Products</h2>
+            <div className="row">
+              {filteredResults.map((product, i) => (
+                <div key={i} className="col-4 mb-3">
+                  <Card product={product} />
+                </div>
+              ))}
+            </div>
+            <hr />
+            {loadMoreButton()}
           </div>
-          <hr />
-          {loadMoreButton()}
         </div>
       </div>
     </Layout>

@@ -2,7 +2,7 @@ import React from "react";
 import Menu from "./Menu";
 import "../styles.css";
 import Footer from "./Footer";
-import SingleStockReport from "./SingleStockReport";
+
 
 const Layout = ({
   // img = "img",
@@ -11,7 +11,7 @@ const Layout = ({
   className,
   children,
 }) => (
-  <div>
+  <div className="body-lay">
     <div>
       <Menu />
       <div className="jambo">
@@ -21,9 +21,10 @@ const Layout = ({
           <p className="lead">{description}</p>
         </div>
       </div>
-      <div className={className}>{children}</div>
-    </div>
-
+      
+        <div className={className}>{children}</div>
+        </div>
+   
     <div>
       <Footer />
     </div>

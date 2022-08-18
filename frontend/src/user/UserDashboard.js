@@ -99,7 +99,7 @@ const Dashboard = () => {
     >
       <div className="row">
         <div className="col-3">{userLinks()}</div>
-        <div className="col-9">
+        <div className="col-7">
           {userInfo()}
           {purchaseHistory(history)}
         </div>
