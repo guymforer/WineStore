@@ -6,21 +6,25 @@ import DoughnutChart from "./DoughnutChart";
 const ChartDisplay = () => {
   return (
     <div>
-      <Layout
+      {/* <Layout
         title="Statistics Dashboard"
         description={`G'day !`}
         className="container-fluid"
-      >
-        <div className="row">
-          {/* <Statsticsfuncs /> */}
-          <div className="bar-chart">
-            <ChartData />
-          </div>
-          <div className="dough-chart">
-            <DoughnutChart />
-          </div>
+      > */}
+      <div className="row">
+        {/* <Statsticsfuncs /> */}
+        <div className="col-8">
+          <br />
+          <h3> Updated stattistics:</h3>
+          <h3>Orders status and profit of each status:</h3>
+          <ChartData />
         </div>
-      </Layout>
+        <div className="col-8">
+        <h3>popular regions and each region profit:</h3>
+          <DoughnutChart />
+        </div>
+      </div>
+      {/* </Layout> */}
     </div>
   );
 };

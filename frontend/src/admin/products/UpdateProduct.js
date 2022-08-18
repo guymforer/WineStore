@@ -234,7 +234,7 @@ const UpdateProduct = ({ match }) => {
             description={`G'day ${user.name}, ready to update product?`}
         >
             <div className="row">
-                <div className="col-md-8 offset-md-2">
+                <div className="col-md-7 offset-md-2">
                     {showLoading()}
                     {showSuccess()}
                     {showError()}

@@ -4,9 +4,16 @@ import { getProducts, getFilteredProducts, getAdresses } from "./apiCore";
 import Card from "./Card";
 import Search from "./Search";
 import SimpleMap from "./SimpleMap";
+import { Link } from "react-router-dom";
 //import Footer from "./Footer";
 // import { getStores, loadMap } from "./map";
 
+const cards = [
+  {
+    title: "hey",
+    content:"hey",
+  }
+]
 const Home = () => {
   const [productsBySell, setProductsBySell] = useState([]);
   const [productsByArrival, setProductsByArrival] = useState([]);
@@ -46,12 +53,31 @@ const Home = () => {
 
   return (
     <Layout
-      title="A la vino"
+      // img="https://www.petoskeyfarms.com/v/vspfiles/photos/homepage/1651263751914.jpg"
+      title="A La Vino Official Website"
       description="Welcome to our web wine shop. the best of the best is just one click away.."
       className="container-fluid"
     >
-      {/* <Search /> */}
-      <h2 className="mb-4">New Arrivals</h2>
+      <div className="container-img">
+        <img
+          className="image"
+          src="https://www.petoskeyfarms.com/v/vspfiles/photos/homepage/1651263751914.jpg"
+          alt="Image Text"
+        />
+        <div className="middle">
+          <div className="text-img">
+            {/* A La Vino <br /> Come  */}
+            Click to 
+            <Link className="text-img" to="/shop">
+          shop
+            </Link>
+            with us
+          </div>
+        </div>
+        {/* <Search /> */}
+      </div>
+  
+      <h2 className="mb-4-home">New In Stock</h2>
       <div className="row">
         {productsByArrival.map((product, i) => (
           <div key={i} className="col-4 mb-3">
@@ -60,7 +86,7 @@ const Home = () => {
         ))}
       </div>
 
-      <h2 className="mb-4">Best Sellers</h2>
+      <h2 className="mb-4-home">Best Sellers</h2>
       <div className="row">
         {productsBySell.map((product, i) => (
           <div key={i} className="col-4 mb-3">
@@ -69,8 +95,8 @@ const Home = () => {
         ))}
       </div>
 
-      <div className="map-home">
-        <h2 className="map-text">Come visit our store!</h2>
+      <div className="map">
+        <h2 className="map-text">Come meet us in stores!</h2>
         <div className="map">
           <SimpleMap />
         </div>

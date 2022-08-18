@@ -12,10 +12,7 @@ const Cart = () => {
     setItems(getCart());
   }, []);
 
-
   const showItems = (items) => {
-
-
     return (
       <div>
         <h2>Your cart has {`${items.length}`} items</h2>

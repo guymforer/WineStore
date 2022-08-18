@@ -8,34 +8,26 @@ import RadioBox from "./RadioBox";
 import SimpleMap from "./SimpleMap";
 import AboutDisplay from "./AboutDisplay";
 import { Link } from "react-router-dom";
+import CarouselHome from "./CarouselHome";
+
 
 const About = () => {
-  ////statistics
-
-  ///video
-
-  /// socketio
-
+ 
   return (
     <Layout
-      title="About Page"
+      title=""
       description="Wine lifestyle always wins. "
       className="container-fluid"
     >
-      <AboutDisplay />
+  
  
-      {/* facebook */}
-
- 
-
-      {/* map */}
-      <h2 className="map-text">Come visit our store!</h2>
+      <CarouselHome  />
       <div className="map">
-        <SimpleMap />
-
-   
+        <h2 className="map-text">Come meet us in stores!</h2>
+        <div className="map">
+          <SimpleMap />
+        </div>
       </div>
-      {/* <BarChart /> */}
     </Layout>
   );
 };
