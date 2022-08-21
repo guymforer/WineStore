@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { Link, Redirect } from "react-router-dom";
-import ReactPlayer from "react-player";
+
 
 function MyVerticallyCenteredModalSocial(props) {
   return (

@@ -516,6 +516,12 @@ html,body{
   padding-bottom: 10%;
 }
 
+
+.section {
+  width: 50%;
+  height: 50%;
+}
+
 .jambo-hide{
   display: none;
 }
