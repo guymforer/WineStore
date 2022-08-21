@@ -14,7 +14,7 @@ const productRoutes = require("./routes/product");
 const braintreeRoutes = require("./routes/braintree");
 const orderRoutes = require("./routes/order");
 const mapRoutes = require("./routes/map");
-
+const analyticsRoutes = require("./routes/analytics");
 // app
 const app = express();
 
@@ -47,7 +47,7 @@ app.use("/api", productRoutes);
 app.use("/api", braintreeRoutes);
 app.use("/api", orderRoutes);
 app.use("/api", mapRoutes);
-
+app.use("/api", analyticsRoutes);
 // const express = require("express");
 // const app = express();
 const http = require("http");
@@ -81,7 +81,7 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(3001, () => {
+server.listen(3000, () => {
   console.log("SERVER RUNNING");
 });
 
