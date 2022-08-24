@@ -94,16 +94,21 @@ const Footer = () => {
               </p>
               <p>
                 <MDBIcon icon="envelope" className="me-3" />
-                for more info, our managemet creator: adicohen28x@gmail.com
+                for more info, our managemet creator: guymforer@gmail.com
+                <br />
+                adicohen28x@gmail.com
               </p>
               <p>
-                <MDBIcon icon="phone" className="me-3" /> + 972 050 333 9698
+                <MDBIcon icon="phone" className="me-3" /> + 972 052 255 3355
+                <br /> <MDBIcon icon="phone" className="me-3" /> +972 050 333
+                9698
               </p>
               <p>
-               <ul>
+                <ul>
                   <li className="nav-link ">
                     <Link className="nav-item  me-3" to="/chatapp">
-                    <MDBIcon icon="far fa-comment-dots" className="me-3" />  Customer Service
+                      <MDBIcon icon="far fa-comment-dots" className="me-3" />{" "}
+                      Customer Service
                       {/* <sup>
                         <small className="cart-badge">Chat</small>
                       </sup> */}
@@ -111,8 +116,6 @@ const Footer = () => {
                   </li>
                 </ul>
               </p>
-
-              
             </MDBCol>
           </MDBRow>
         </MDBContainer>

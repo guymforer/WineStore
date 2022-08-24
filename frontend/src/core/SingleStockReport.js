@@ -2,8 +2,9 @@ import { useState } from "react";
 
 function SingleStockReport(props) {
   const [curr, setCurr] = useState();
+  const current = Date.now();
 
-  fetch(`https://api.exchangerate.host/latest?base=USD`)
+  fetch(`https://api.exchangerate.host/latest?base=USD&v=${current}`)
     .then((res) => res.json())
     .then((res) => {
       setCurr(res.rates[props.currSymbol]);
