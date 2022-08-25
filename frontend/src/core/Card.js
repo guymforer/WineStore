@@ -17,7 +17,6 @@ const Card = ({
   const [count, setCount] = useState(product.count);
   const [pro, setPro] = useState("");
   const [error, setError] = useState("");
-  
 
   const showViewButton = (showViewProductButton) => {
     return (
@@ -29,19 +28,19 @@ const Card = ({
     );
   };
 
-  const init = productId => {
-    getProduct(productId).then(data => {
-        if (data.error) {
-            setError(data.error)
-        } else {
-            // populate the state
-            setPro({
-                quantity: data.quantity,
-            });
-            // load categories
-        }
+  const init = (productId) => {
+    getProduct(productId).then((data) => {
+      if (data.error) {
+        setError(data.error);
+      } else {
+        // populate the state
+        setPro({
+          quantity: data.quantity,
+        });
+        // load categories
+      }
     });
-};
+  };
 
   const addToCart = () => {
     addItem(product, () => {
@@ -51,7 +50,6 @@ const Card = ({
 
   const shouldRedirect = (redirect) => {
     if (redirect) {
-      
       return <Redirect to="/cart" />;
     }
   };
@@ -91,17 +89,16 @@ const Card = ({
   };
 
   const handleChange = (productId) => (event) => {
-    init(productId)
+    init(productId);
 
     setCount(event.target.value < 1 ? 1 : event.target.value);
-    if (event.target.value >= 1 && event.target.value <= pro.quantity ) {
+    if (event.target.value >= 1 && event.target.value <= pro.quantity) {
       updateItem(productId, event.target.value);
-      setError(false)
+      setError(false);
     }
     if (event.target.value > pro.quantity) {
-      setError(true)
+      setError(true);
     }
-    
   };
 
   const showError = () => {

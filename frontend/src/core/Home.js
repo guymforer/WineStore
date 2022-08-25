@@ -11,9 +11,9 @@ import { Link } from "react-router-dom";
 const cards = [
   {
     title: "hey",
-    content:"hey",
-  }
-]
+    content: "hey",
+  },
+];
 const Home = () => {
   const [productsBySell, setProductsBySell] = useState([]);
   const [productsByArrival, setProductsByArrival] = useState([]);
@@ -67,16 +67,16 @@ const Home = () => {
         <div className="middle">
           <div className="text-img">
             {/* A La Vino <br /> Come  */}
-            Click to 
+            Click to
             <Link className="text-img" to="/shop">
-          shop
+              shop
             </Link>
             with us
           </div>
         </div>
         {/* <Search /> */}
       </div>
-  
+
       <h2 className="mb-4-home">New In Stock</h2>
       <div className="row">
         {productsByArrival.map((product, i) => (

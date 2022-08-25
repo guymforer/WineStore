@@ -125,7 +125,7 @@ const Footer = () => {
         className="text-center p-4"
         style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
       >
-        © 2021 Copyright: COHEN-FORER-MENACHEM
+        © 2022 Copyright: FORER-COHEN-MENACHEM
       </div>
     </MDBFooter>
   );
