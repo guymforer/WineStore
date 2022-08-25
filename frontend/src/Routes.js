@@ -41,8 +41,11 @@ import addStore from "./admin/AddStore";
 import ChartDisplay from "./admin/stattistics/ChartDisplay";
 
 //Chat
-import Join from "./ChatClient/Join/Join";
-import Chat from "./ChatClient/Chat/Chat";
+// import Join from "./ChatClient/Join/Join";
+// import Chat from "./ChatClient/Chat/Chat";
+import ChatApp from "./ChatApp"
+
+
 const Routes = () => {
   return (
     <BrowserRouter>
@@ -53,8 +56,9 @@ const Routes = () => {
         <Route path="/about" exact component={About} />
         <Route path="/facebook" exact component={Facebook} />
         <Route path="/" exact component={Home} />
-        <Route path="/join" exact component={Join} />
-        <Route path="/chat" exact component={Chat} />
+        {/* <Route path="/join" exact component={Join} />
+        <Route path="/chat" exact component={Chat} /> */}
+        <Route path="/chatapp" exact component={ChatApp} />
         <PrivateRoute path="/user/dashboard" exact component={Dashboard} />
         <AdminRoute path="/admin/dashboard" exact component={AdminDashboard} />
         <AdminRoute
